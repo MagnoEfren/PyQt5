@@ -1,14 +1,13 @@
-# ProgressBar Circular Arduino y PySide2
+# ProgressBar Circular Arduino y PyQt5
 # @autor: Magno Efren
 # Youtube: https://www.youtube.com/c/MagnoEfren
 
-
-from PySide2.QtCore import  Signal, QObject  # pyqtSignal para pyqt5
+from PyQt5.QtCore import QObject, pyqtSignal,pyqtSlot 
 import serial, serial.tools.list_ports
 from threading import Thread, Event
 
 class Comunicacion(QObject):                                                   
-	datos_recibidos = Signal(str) 
+	datos_recibidos = pyqtSignal(str) 
 
 	def __init__(self):
 		super().__init__()
