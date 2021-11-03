@@ -1,4 +1,4 @@
-# ProgressBar Circular Arduino y PySide2
+# ProgressBar Circular Arduino y PyQt5
 # @autor: Magno Efren
 # Youtube: https://www.youtube.com/c/MagnoEfren
 
