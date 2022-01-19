@@ -11,16 +11,13 @@ class MiApp(QtWidgets.QMainWindow):
 	def __init__(self):
 		super().__init__()
 		self.ui = Ui_MainWindow() 
-		self.ui.setupUi(self)
-		
+		self.ui.setupUi(self)		
 		self.ui.bt_abrir.clicked.connect(self.abrir_archivo)
 		self.ui.pushButton.clicked.connect(self.crear_tabla)
-
 
 	def abrir_archivo(self):
 		file = QFileDialog.getOpenFileName(self,"Abrir Archivo Excel", "","Excel Files (*.xlsx) ;; All Files (*)")
 		self.direccion = file[0]
-
 
 	def crear_tabla(self):
 		try:	
@@ -38,9 +35,7 @@ class MiApp(QtWidgets.QMainWindow):
 		except FileNotFoundError:
 			QMessageBox.about (self,'Informacion', 'El archivo esta \n malogrado')
 			return None
-
 		#print(x, y)
-
 		self.ui.tableWidget.setRowCount(y)
 		self.ui.tableWidget.setColumnCount(x)
 
@@ -54,13 +49,8 @@ class MiApp(QtWidgets.QMainWindow):
 					dato =''
 				self.ui.tableWidget.setItem(i,j, QTableWidgetItem(dato))
 		#print(df_fila)
-
-
-
 if __name__ == "__main__":
      app = QtWidgets.QApplication(sys.argv)
      mi_app = MiApp()
      mi_app.show()
-     sys.exit(app.exec_())		
-
-
+     sys.exit(app.exec_())
