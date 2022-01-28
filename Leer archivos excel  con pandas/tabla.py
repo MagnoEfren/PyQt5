@@ -6,9 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -132,11 +130,9 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.frame)
         self.verticalLayout.setStretch(0, 10)
         MainWindow.setCentralWidget(self.centralwidget)
-
         self.retranslateUi(MainWindow)
         self.bt_salir.clicked.connect(MainWindow.close)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Leer archivos Excel"))
@@ -144,8 +140,6 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "MOSTRAR DATOS"))
         self.label.setText(_translate("MainWindow", "LEER ARCHIVOS EXCEL"))
         self.bt_salir.setText(_translate("MainWindow", "SALIR"))
-
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
