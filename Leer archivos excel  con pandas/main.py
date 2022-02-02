@@ -1,7 +1,6 @@
 # Leer archivos excel desde una GUI en PyQt5 
 # @autor: Magno Efren
 # Youtube: https://www.youtube.com/c/MagnoEfren
-
 import sys
 from tabla import*
 from PyQt5.QtWidgets import QTableWidgetItem, QFileDialog, QMessageBox
