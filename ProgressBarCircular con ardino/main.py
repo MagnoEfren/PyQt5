@@ -2,12 +2,10 @@
 # @autor: Magno Efren
 # Youtube: https://www.youtube.com/c/MagnoEfren
 
-
 import sys
 from ui_progressBarCircular import *
 from comunicacion_serial import Comunicacion
 from PyQt5.QtCore import QTimer  
-
 
 class MiApp(QtWidgets.QMainWindow):
 	def __init__(self,*args, **kwargs):
@@ -27,7 +25,6 @@ class MiApp(QtWidgets.QMainWindow):
 		self.ui.actualizar.clicked.connect(self.mostrar_barra)
 		self.ui.desconectar.clicked.connect(self.desconectar)
 
-
 	def datos_arduino(self, data):
 		self.nivel = float(data)
 
@@ -37,8 +34,6 @@ class MiApp(QtWidgets.QMainWindow):
 		self.serial.arduino.port = port      
 		self.serial.arduino.baudrate = baud  
 		self.serial.conexion_serial()    
-
-
 
 	def desconectar(self):
 		self.serial.desconectar()
@@ -59,7 +54,6 @@ class MiApp(QtWidgets.QMainWindow):
 			background-color: qconicalgradient(cx:0.5, cy:0.5, angle:90, stop:{stop1}  
 			rgba(255, 0, 55, 255), stop:{stop2} rgba(255, 0, 0, 30));
 		}"""
-
 		val = (self.nivel)/4.91
 
 		stop1 = str(abs(val - 0.001))
