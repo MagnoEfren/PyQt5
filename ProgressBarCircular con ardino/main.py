@@ -39,8 +39,7 @@ class MiApp(QtWidgets.QMainWindow):
 		self.serial.desconectar()
 
 	def mostrar_barra(self):		
-		self.progressbar()
-		
+		self.progressbar()		
 		QTimer.singleShot(20, self.mostrar_barra)
 
 	def puertos_disponible(self):
@@ -55,10 +54,8 @@ class MiApp(QtWidgets.QMainWindow):
 			rgba(255, 0, 55, 255), stop:{stop2} rgba(255, 0, 0, 30));
 		}"""
 		val = (self.nivel)/4.91
-
 		stop1 = str(abs(val - 0.001))
 		stop2 = str(val)
-
 		valor1 = int(float(stop1)*1000)
 		valor2 = int(float(stop2)*1000)
 		if (valor1>=0 and valor2<=1000) and (valor2>=0 and valor1<=1000):	
