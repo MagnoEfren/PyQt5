@@ -14,10 +14,8 @@ class MiApp(QtWidgets.QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow() 
         self.ui.setupUi(self)
-
         self.grafica = Canvas_grafica()
         self.ui.verticalLayout_grafica.addWidget(self.grafica)
-
         self.ui.slider1.valueChanged.connect(self.slider_uno)
         self.ui.slider2.valueChanged.connect(self.slider_dos)
 
@@ -33,7 +31,6 @@ class Canvas_grafica(FigureCanvas):
         super().__init__(self.fig) 
         self.ax.grid()
         self.ax.margins(x=0)
-
         self.nivel1 = 10
         self.nivel2 = 1
         self.grafica_datos()
@@ -46,13 +43,10 @@ class Canvas_grafica(FigureCanvas):
 
     def grafica_datos(self):
         plt.title("Grafica en PyQt5 con Matplotlib")
-        #plt.xlim(-4, 32)
-        #plt.ylim(-12, 12)
         x = np.arange(-np.pi, 10*np.pi, 0.01) 
         line, = self.ax.plot(x, self.nivel1*np.sin(self.nivel2*x), color='r',linewidth=2)
         self.draw()     
         line.set_ydata(np.sin(x)+24)
-        #print(self.nivel1, self.nivel2)
         QtCore.QTimer.singleShot(10, self.grafica_datos)
 
 
@@ -61,12 +55,4 @@ if __name__ == "__main__":
      mi_app = MiApp()
      mi_app.show()
      sys.exit(app.exec_())  
-#self.ax = plt.axes()        
-#self.ax=plt.gca()
-#plt.axis('off')        
-#self.fig.subplots_adjust(top=1.1 ,bottom=-0.1, left=-0.1, right=1.1)
-#self.ax.get_xaxis().set_visible(False)
-#self.ax.spines['right'].set_visible(False)
-#self.ax.spines['top'].set_visible(False)
-#self.ax.spines['bottom'].set_visible(False)
-#self.ax.spines['left'].set_visible(False)
+
