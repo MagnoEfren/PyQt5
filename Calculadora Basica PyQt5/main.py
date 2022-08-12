@@ -119,10 +119,8 @@ class MiFormulario(QtWidgets.QWidget):
 	def obtener19(self):
 		entrada = self.ui.valor.text()
 		self.ui.valor.setText(entrada[:len(entrada)-1])
-
 if __name__ == "__main__":
 	app = QtWidgets.QApplication(sys.argv) 
 	mi_app = MiFormulario()    
 	mi_app.show()				
-	sys.exit(app.exec_())		
-						         
+	sys.exit(app.exec_())		         
