@@ -62,7 +62,6 @@ class MiApp(QtWidgets.QMainWindow):
 			nuevo_estilo = estilo.replace('{stop1}', stop1).replace('{stop2}', stop2)
 			self.ui.voltaje.setText(str(self.nivel))
 			self.ui.progressbar.setStyleSheet(nuevo_estilo)
-
 if __name__ == "__main__":
      app = QtWidgets.QApplication(sys.argv)
      mi_app = MiApp()
