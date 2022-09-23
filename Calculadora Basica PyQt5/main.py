@@ -1,7 +1,6 @@
 # Calculadora  Basica en Python con PyQt5
 # @autor: Magno Efren
 # Youtube: https://www.youtube.com/c/MagnoEfren
-
 import sys      
 from Calculadora import *
 
