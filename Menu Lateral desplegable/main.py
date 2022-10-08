@@ -93,7 +93,6 @@ class MiApp(QtWidgets.QMainWindow):
 		else:
 			self.showNormal()
 
-
 if __name__ == "__main__":
      app = QtWidgets.QApplication(sys.argv)
      mi_app = MiApp()
