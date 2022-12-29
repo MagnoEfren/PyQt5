@@ -26,11 +26,9 @@ class MiApp(QtWidgets.QMainWindow):
 			df_fila = df.to_numpy().tolist()
 			x = len(columnas)
 			y = len(df_fila)
-
 		except ValueError:
 			QMessageBox.about (self,'Informacion', 'Formato incorrecto')
-			return None			
-
+			return None
 		except FileNotFoundError:
 			QMessageBox.about (self,'Informacion', 'El archivo esta \n malogrado')
 			return None
