@@ -1,30 +1,24 @@
 # @autor: Magno Efren
 # Youtube: https://www.youtube.com/c/MagnoEfren
-
 import sys
 from menu import *
 from PyQt5 import QtCore
 from PyQt5.QtCore import QPropertyAnimation
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 class MiApp(QtWidgets.QMainWindow):
 	def __init__(self):
 		super().__init__()
 		self.ui = Ui_MainWindow() 
 		self.ui.setupUi(self)
-
 		#eliminar barra y de titulo - opacidad
 		self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
 		self.setWindowOpacity(1)
-
 		#SizeGrip
 		self.gripSize = 10
 		self.grip = QtWidgets.QSizeGrip(self)
 		self.grip.resize(self.gripSize, self.gripSize)
-
 		# mover ventana
 		self.ui.frame_superior.mouseMoveEvent = self.mover_ventana
-
 		#acceder a las paginas
 		self.ui.bt_inicio.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page))			
 		self.ui.bt_uno.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_uno))
@@ -71,16 +65,13 @@ class MiApp(QtWidgets.QMainWindow):
 			self.animacion.setEndValue(extender)
 			self.animacion.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
 			self.animacion.start()
-
 	## SizeGrip
 	def resizeEvent(self, event):
 		rect = self.rect()
 		self.grip.move(rect.right() - self.gripSize, rect.bottom() - self.gripSize)
-
 	## mover ventana
 	def mousePressEvent(self, event):
 		self.clickPosition = event.globalPos()
-
 	def mover_ventana(self, event):
 		if self.isMaximized() == False:			
 			if event.buttons() == QtCore.Qt.LeftButton:
@@ -92,11 +83,8 @@ class MiApp(QtWidgets.QMainWindow):
 			self.showMaximized()
 		else:
 			self.showNormal()
-
 if __name__ == "__main__":
      app = QtWidgets.QApplication(sys.argv)
      mi_app = MiApp()
      mi_app.show()
      sys.exit(app.exec_())	
-
-
