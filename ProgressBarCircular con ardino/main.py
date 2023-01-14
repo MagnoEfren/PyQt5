@@ -1,7 +1,6 @@
 # ProgressBar Circular Arduino y PyQt5
 # @autor: Magno Efren
 # Youtube: https://www.youtube.com/c/MagnoEfren
-
 import sys
 from ui_progressBarCircular import *
 from comunicacion_serial import Comunicacion
