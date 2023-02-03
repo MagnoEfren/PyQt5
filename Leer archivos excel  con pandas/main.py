@@ -6,6 +6,7 @@ from tabla import*
 from PyQt5.QtWidgets import QTableWidgetItem, QFileDialog, QMessageBox
 import pandas as pd
 
+
 class MiApp(QtWidgets.QMainWindow):
 	def __init__(self):
 		super().__init__()
@@ -17,11 +18,9 @@ class MiApp(QtWidgets.QMainWindow):
 	def abrir_archivo(self):
 		file = QFileDialog.getOpenFileName(self,"Abrir Archivo Excel", "","Excel Files (*.xlsx) ;; All Files (*)")
 		self.direccion = file[0]
-
 	def crear_tabla(self):
 		try:	
 			df = pd.read_excel(self.direccion)
-
 			columnas = list(df.columns)
 			df_fila = df.to_numpy().tolist()
 			x = len(columnas)
