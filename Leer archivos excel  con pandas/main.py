@@ -6,7 +6,6 @@ from tabla import*
 from PyQt5.QtWidgets import QTableWidgetItem, QFileDialog, QMessageBox
 import pandas as pd
 
-
 class MiApp(QtWidgets.QMainWindow):
 	def __init__(self):
 		super().__init__()
