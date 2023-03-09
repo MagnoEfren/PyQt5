@@ -1,4 +1,4 @@
-# GUI en Python con PyQt5 / PySide2
+# GUI en Python con PyQt5 
 
 <div align="center">
   
