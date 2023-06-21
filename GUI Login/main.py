@@ -8,6 +8,7 @@ from PyQt5.uic import loadUi
 from PyQt5.QtCore import Qt
 import sys
 
+
 class Login(QMainWindow):
 	def __init__(self):
 		super(Login, self).__init__()
