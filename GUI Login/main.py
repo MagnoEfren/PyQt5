@@ -8,12 +8,10 @@ from PyQt5.uic import loadUi
 from PyQt5.QtCore import Qt
 import sys
 
-
 class Login(QMainWindow):
 	def __init__(self):
 		super(Login, self).__init__()
 		loadUi('design.ui', self)
-
 		self.bt_normal.hide()
 		self.click_posicion = None
 		self.bt_minimize.clicked.connect(lambda :self.showMinimized())
